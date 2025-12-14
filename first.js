@@ -1,10 +1,18 @@
-function afterdealy(time, cb){
-  setTimeout(() => {
-     cb();
-  }, time);
+function getUSer(username, cb){
+   setTimeout(() => {
+     cb(username);
+   }, 1000);
 }
 
+function getUserPosts(cb){
+  setTimeout(() => {
+    cb(["1Post of user" , "2Post of user"]);
+  }, 1200);
+}
 
-afterdealy(1000, function(){
-     console.log("Callback executed")
-})
+getUSer("Aditya", function(username){
+   console.log(username);
+   getUserPosts(function (post){
+      console.log(post);
+   })
+}) 
