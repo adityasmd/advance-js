@@ -1,18 +1,27 @@
-function getUSer(username, cb){
-   setTimeout(() => {
-     cb(username);
-   }, 1000);
-}
-
-function getUserPosts(cb){
+function loginUser(cb){  
   setTimeout(() => {
-    cb(["1Post of user" , "2Post of user"]);
-  }, 1200);
+        cb("loginUser");
+  }, 1000);
+}
+function fetchPermissions(cb){  
+  setTimeout(() => {
+        cb("fetchPermissions");
+
+  }, 2000);
+}
+function loadDashboard(cb){  
+  setTimeout(() => {
+        cb("loadDashboard");
+
+  }, 3000);
 }
 
-getUSer("Aditya", function(username){
-   console.log(username);
-   getUserPosts(function (post){
-      console.log(post);
-   })
-}) 
+loginUser(function(user){
+  console.log(user);
+    fetchPermissions(function(permissions){
+    console.log(permissions);
+    loadDashboard(function(loaded){
+    console.log(loaded);
+       })
+    })
+})
