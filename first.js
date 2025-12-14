@@ -4,6 +4,7 @@ function afterdealy(time, cb){
   }, time);
 }
 
+
 afterdealy(1000, function(){
      console.log("Callback executed")
 })
